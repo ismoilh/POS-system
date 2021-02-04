@@ -31,7 +31,6 @@ const BlogDetail = () => {
   return (
     <>
       <div className="header-top q1">
-        <Link to='/' className="navbar-brand">Lieferando</Link>
         <AuthOptions />
       </div>
       <div className="card mb-3 blogT">

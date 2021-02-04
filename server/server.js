@@ -126,6 +126,10 @@ const ADMIN = {
     email: process.env.ADMIN_EMAIL || 'admin@example.com',
     password: process.env.ADMIN_PASSWORD || 'lovejs'
 }
+
+app.use(express.static(path.join(__dirname, "client", "build")));
+
+
 app.use(function (req, res, next) {
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
         jsonwebtoken.verify(req.headers.authorization.split(' ')[1], 'RESTFULAPIs', function (err, decode) {
@@ -149,9 +153,10 @@ app.use('/location', locationRoutes);
 app.use('/charge', paymentRoute);
 app.use('/paid', paidRoute);
 
-app.all('*', (req, res, next) => {
-    next(new ExpressError('Page Not Found', 404))
-})
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 
 const run = async () => {

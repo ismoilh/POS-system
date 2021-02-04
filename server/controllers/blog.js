@@ -19,8 +19,8 @@ module.exports.createCampground = async (req, res) => {
     await campground.save().then(blog => res.json(blog));
 }
 
-module.exports.showBlog = async (req, res) => {
-    await Blog.findById(req.params.id)
+module.exports.showBlog = (req, res) => {
+    Blog.findById(req.params.id)
         .exec(function (err, blog) {
             if (err) {
                 res.send(err)
