@@ -12,6 +12,8 @@ export default function Login() {
     const [error, setError] = useState();
     const [username, setUsername] = useState();
 
+    const [{ userData }, dispatch] = useStateValue()
+
     const history = useHistory();
 
     const submit = async (e) => {
