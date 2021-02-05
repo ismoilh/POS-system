@@ -11,12 +11,10 @@ const Blog = () => {
     const [desc, setDesc] = useState('')
 
 
-    const port = process.env.PORT || 5000;
-
     const submit = (e) => {
         e.preventDefault()
         let Data = { title: title, desc: desc }
-        axios.post(`http://localhost:${port}/blog`, Data).then(() => {
+        axios.post(`https://pacific-shelf-87157.herokuapp.com/blog`, Data).then(() => {
             setTitle('')
             setDesc('')
         })

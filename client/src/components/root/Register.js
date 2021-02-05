@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 // import authSvg from '../assests/auth.svg';
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,8 +7,6 @@ import { Redirect } from 'react-router-dom';
 import './style.css'
 
 const Register = () => {
-
-  const port = process.env.PORT || 5000;
 
   const [alert, setAlert] = useState(false)
   const [notFilled, setNotFilled] = useState(false)
@@ -32,7 +29,7 @@ const Register = () => {
       if (password === passwordCheck) {
         setFormData({ ...formData, textChange: 'Submitting' });
         axios
-          .post(`http://localhost:${port}/auth/register`, {
+          .post('http://localhost:8000/auth/register', {
             username,
             email,
             password: password

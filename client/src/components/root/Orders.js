@@ -24,9 +24,6 @@ const Orders = () => {
     const [box, setBox] = useState({ posts: [] })
     const [box2, setBox2] = useState()
 
-
-
-
     const [distPrice, setDistPrice] = useState()
 
     let userss = JSON.parse(localStorage.getItem('user-data')) || {}
@@ -37,7 +34,7 @@ const Orders = () => {
             localStorage.setItem("auth-token", "");
             token = "";
         }
-        const response = await fetch(`http://localhost:${process.env.PORT}/orders`, {
+        const response = await fetch('http://localhost:8000/orders', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -130,7 +127,7 @@ const Orders = () => {
             product: { name: JSON.stringify(food1), price: box2 + distPrice }
         }
         const headers = { "Content-Type": "application/json" }
-        return fetch(`http://localhost:${process.env.PORT}/charge`, {
+        return fetch('http://localhost:8000/charge', {
             method: 'POST',
             headers,
             body: JSON.stringify(body)
@@ -138,7 +135,7 @@ const Orders = () => {
             console.log('response', res)
             const { status } = res
             console.log("status", status)
-            axios.post(`http://localhost:${process.env.PORT}/paid`, paydata)
+            axios.post('http://localhost:8000/paid', paydata)
 
         }).catch(err => {
 
@@ -164,7 +161,7 @@ const Orders = () => {
                                 <th scope="col"> {post.title}</th>
                                 <th scope="col">{post.price}€</th>
                                 <th scope="col"><button onClick={() => {
-                                    axios.delete(`http://localhost:${process.env.PORT}/orders/` + post._id)
+                                    axios.delete('http://localhost:8000/orders/' + post._id)
                                         .then(() => {
                                             qwe()
                                         })

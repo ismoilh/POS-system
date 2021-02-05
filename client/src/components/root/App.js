@@ -37,7 +37,7 @@ function App() {
         token = "";
       }
       const tokenRes = await Axios.post(
-        `http://localhost:${process.env.PORT}/auth/tokenIsValid`,
+        'https://pacific-shelf-87157.herokuapp.com/auth/tokenIsValid',
         null,
         { headers: { "x-auth-token": token } }
       );

@@ -7,8 +7,6 @@ import ErrorNotice from "../misc/ErrorNotice";
 import { useStateValue } from "../../StateProvider";
 
 export default function Login() {
-
-
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
@@ -23,7 +21,7 @@ export default function Login() {
         try {
             const loginUser = { email, password, username };
             const loginRes = await Axios.post(
-                `http://localhost:${process.env.PORT}/auth/login`,
+                "http://localhost:8000/auth/login",
                 loginUser
             )
             dispatch({
@@ -34,7 +32,7 @@ export default function Login() {
             localStorage.setItem("auth-token", loginRes.data.token);
             localStorage.setItem("user-data", JSON.stringify(loginRes.data.user));
             if (email == 'admin@example.com') {
-                window.location.href = `http://localhost:${process.env.PORT}}/admin`;
+                window.location.href = 'http://localhost:8000/admin';
             } else {
                 history.push("/");
             }

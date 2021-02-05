@@ -18,11 +18,11 @@ const Head = () => {
         lat: null,
         lng: null
     })
-    const port = process.env.PORT || 5000;
+
 
     const start = async () => {
 
-        const response = await fetch(`http://localhost:${process.env.PORT}/location`, {
+        const response = await fetch('https://pacific-shelf-87157.herokuapp.com//location', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
