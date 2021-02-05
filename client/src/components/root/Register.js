@@ -29,7 +29,7 @@ const Register = () => {
       if (password === passwordCheck) {
         setFormData({ ...formData, textChange: 'Submitting' });
         axios
-          .post('http://localhost:8000/auth/register', {
+          .post('https://pacific-shelf-87157.herokuapp.com/register', {
             username,
             email,
             password: password

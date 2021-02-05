@@ -13,7 +13,7 @@ const Blog = () => {
   const [box, setBox] = useState({ posts: [] });
 
   const qwe = async () => {
-    const response = await fetch("http://localhost:8000/blog", {
+    const response = await fetch("https://pacific-shelf-87157.herokuapp.com/blog", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

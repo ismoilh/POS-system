@@ -15,7 +15,7 @@ const BlogDetail = () => {
   });
 
   const asd = async () => {
-    const response = await fetch("http://localhost:8000/blog/show/" + readId, {
+    const response = await fetch("https://pacific-shelf-87157.herokuapp.com/show/" + readId, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

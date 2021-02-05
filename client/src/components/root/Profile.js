@@ -16,7 +16,7 @@ const Profile = () => {
     const [{ userData }, dispatch] = useStateValue()
 
     const remove = () => {
-        const url = "http://localhost:8000/auth/delete/" + userData.user.id;
+        const url = "https://pacific-shelf-87157.herokuapp.com/auth/delete/" + userData.user.id;
         Axios.delete(url).then(() => {
             localStorage.clear()
             dispatch({
