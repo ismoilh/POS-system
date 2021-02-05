@@ -22,7 +22,7 @@ const Head = () => {
 
     const start = async () => {
 
-        const response = await fetch('https://pacific-shelf-87157.herokuapp.com//location', {
+        const response = await fetch('https://pacific-shelf-87157.herokuapp.com/location', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

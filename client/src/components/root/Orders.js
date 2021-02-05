@@ -34,7 +34,7 @@ const Orders = () => {
             localStorage.setItem("auth-token", "");
             token = "";
         }
-        const response = await fetch('http://localhost:8000/orders', {
+        const response = await fetch('https://pacific-shelf-87157.herokuapp.com/orders', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

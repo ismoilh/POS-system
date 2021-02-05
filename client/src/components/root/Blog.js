@@ -14,7 +14,7 @@ const Blog = () => {
     const submit = (e) => {
         e.preventDefault()
         let Data = { title: title, desc: desc }
-        axios.post(`https://pacific-shelf-87157.herokuapp.com/blog`, Data).then(() => {
+        axios.post('https://pacific-shelf-87157.herokuapp.com/blog', Data).then(() => {
             setTitle('')
             setDesc('')
         })

@@ -21,7 +21,7 @@ export default function Login() {
         try {
             const loginUser = { email, password, username };
             const loginRes = await Axios.post(
-                "http://localhost:8000/auth/login",
+                "https://pacific-shelf-87157.herokuapp.com/auth/login",
                 loginUser
             )
             dispatch({
@@ -32,7 +32,7 @@ export default function Login() {
             localStorage.setItem("auth-token", loginRes.data.token);
             localStorage.setItem("user-data", JSON.stringify(loginRes.data.user));
             if (email == 'admin@example.com') {
-                window.location.href = 'http://localhost:8000/admin';
+                window.location.href = 'https://pacific-shelf-87157.herokuapp.com/admin';
             } else {
                 history.push("/");
             }

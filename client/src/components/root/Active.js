@@ -33,7 +33,7 @@ const Activate = ({ match }) => {
         e.preventDefault();
 
         axios
-            .post('http://localhost:8000/auth/activation', {
+            .post('https://pacific-shelf-87157.herokuapp.com/auth/activation', {
                 token
             })
             .then(res => {
