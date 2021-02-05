@@ -52,8 +52,6 @@
   "devDependencies": {},
   "scripts": {
     "start": "node server/server.js",
-    "server": "nodemon server/server.js",
-    "iall": "npm i && cd client && npm i",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "engines": {
