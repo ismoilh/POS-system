@@ -51,12 +51,13 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
     "client": "cd client && npm run start",
     "build:client": "cd client && npm run build",
     "iall": "npm i && cd client && npm i",
     "startboth": "npm run start & npm run client",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "engines": {
     "node": "14.15.4"

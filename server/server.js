@@ -127,8 +127,6 @@ const ADMIN = {
     password: process.env.ADMIN_PASSWORD || 'lovejs'
 }
 
-app.use(express.static(path.join(__dirname, "../client/build")));
-
 
 app.use(function (req, res, next) {
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
@@ -154,9 +152,14 @@ app.use('/charge', paymentRoute);
 app.use('/paid', paidRoute);
 
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "../client/build/index.html"));
-});
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "../client/build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname + "../client/build/index.html"));
+    });
+}
+
+
 
 
 const run = async () => {
