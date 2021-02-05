@@ -34,7 +34,7 @@ export default function Login() {
             localStorage.setItem("auth-token", loginRes.data.token);
             localStorage.setItem("user-data", JSON.stringify(loginRes.data.user));
             if (email == 'admin@example.com') {
-                window.location.href = `http://localhost:${port}/admin`;
+                window.location.href = `http://localhost:${process.env.PORT}}/admin`;
             } else {
                 history.push("/");
             }

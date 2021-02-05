@@ -130,7 +130,7 @@ const Orders = () => {
             product: { name: JSON.stringify(food1), price: box2 + distPrice }
         }
         const headers = { "Content-Type": "application/json" }
-        return fetch(`http://localhost:${port}/charge`, {
+        return fetch(`http://localhost:${process.env.PORT}/charge`, {
             method: 'POST',
             headers,
             body: JSON.stringify(body)
@@ -138,7 +138,7 @@ const Orders = () => {
             console.log('response', res)
             const { status } = res
             console.log("status", status)
-            axios.post(`http://localhost:${port}/paid`, paydata)
+            axios.post(`http://localhost:${process.env.PORT}/paid`, paydata)
 
         }).catch(err => {
 
@@ -164,7 +164,7 @@ const Orders = () => {
                                 <th scope="col"> {post.title}</th>
                                 <th scope="col">{post.price}€</th>
                                 <th scope="col"><button onClick={() => {
-                                    axios.delete(`http://localhost:${port}/orders/` + post._id)
+                                    axios.delete(`http://localhost:${process.env.PORT}/orders/` + post._id)
                                         .then(() => {
                                             qwe()
                                         })
