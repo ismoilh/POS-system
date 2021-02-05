@@ -57,7 +57,7 @@
     "build:client": "cd client && npm run build",
     "iall": "npm i && cd client && npm i",
     "startboth": "npm run start & npm run client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm start --prefix client"
   },
   "engines": {
     "node": "14.15.4"
