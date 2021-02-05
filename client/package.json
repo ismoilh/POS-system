@@ -2,7 +2,7 @@
   "name": "liferando",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://pacific-shelf-87157.herokuapp.com/",
   "dependencies": {
     "@stripe/react-stripe-js": "^1.2.0",
     "@stripe/stripe-js": "^1.11.0",
