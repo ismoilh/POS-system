@@ -15,7 +15,7 @@ const Blog = () => {
   const [box, setBox] = useState({ posts: [] });
 
   const qwe = async () => {
-    const response = await fetch('/blog', {
+    const response = await fetch(`http://localhost:${process.env.PORT}/blog`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

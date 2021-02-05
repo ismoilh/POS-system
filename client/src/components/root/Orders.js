@@ -26,7 +26,6 @@ const Orders = () => {
 
 
 
-    const port = process.env.PORT || 5000;
 
     const [distPrice, setDistPrice] = useState()
 
@@ -38,7 +37,7 @@ const Orders = () => {
             localStorage.setItem("auth-token", "");
             token = "";
         }
-        const response = await fetch(`http://localhost:${port}/orders`, {
+        const response = await fetch(`http://localhost:${process.env.PORT}/orders`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -8,7 +8,6 @@ import { useStateValue } from "../../StateProvider";
 
 export default function Login() {
 
-    const port = process.env.PORT || 5000;
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -24,7 +23,7 @@ export default function Login() {
         try {
             const loginUser = { email, password, username };
             const loginRes = await Axios.post(
-                `http://localhost:${port}/auth/login`,
+                `http://localhost:${process.env.PORT}/auth/login`,
                 loginUser
             )
             dispatch({
