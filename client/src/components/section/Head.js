@@ -22,7 +22,7 @@ const Head = () => {
 
     const start = async () => {
 
-        const response = await fetch(`http://localhost:${port}/location`, {
+        const response = await fetch(`http://localhost:${process.env.PORT}/location`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
