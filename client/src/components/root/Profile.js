@@ -7,16 +7,14 @@ import AuthOptions from "../auth/AuthOptions";
 
 
 
-
-
-
 const Profile = () => {
 
+    const port = process.env.PORT || 5000;
 
     const [{ userData }, dispatch] = useStateValue()
 
     const remove = () => {
-        const url = "http://localhost:8000/auth/delete/" + userData.user.id;
+        const url = `http://localhost:${port}/auth/delete/` + userData.user.id;
         Axios.delete(url).then(() => {
             localStorage.clear()
             dispatch({

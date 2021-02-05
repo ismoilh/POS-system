@@ -6,6 +6,9 @@ const PaidOrders = () => {
 
     const [box, setBox] = useState({ posts: [] })
 
+
+    const port = process.env.PORT || 5000;
+
     let userdata = JSON.parse(localStorage.getItem('user-data'))
 
     if (userdata === null) {
@@ -19,7 +22,7 @@ const PaidOrders = () => {
             localStorage.setItem("auth-token", "");
             token = "";
         }
-        const response = await fetch('http://localhost:8000/paid', {
+        const response = await fetch(`http://localhost:${port}/paid`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

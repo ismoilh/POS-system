@@ -21,6 +21,7 @@ function App() {
 
 
   const [{ alert1, alert2 }, dispatch] = useStateValue()
+  const port = process.env.PORT || 5000;
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -37,7 +38,7 @@ function App() {
         token = "";
       }
       const tokenRes = await Axios.post(
-        "http://localhost:8000/auth/tokenIsValid",
+        `http://localhost:${port}/auth/tokenIsValid`,
         null,
         { headers: { "x-auth-token": token } }
       );

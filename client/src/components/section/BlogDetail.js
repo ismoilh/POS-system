@@ -7,6 +7,9 @@ import '../root/style.css'
 const BlogDetail = () => {
   let readId = localStorage.getItem("id-read");
 
+
+  const port = process.env.PORT || 5000;
+
   const [box, setBox] = useState({
     posts: {
       title: undefined,
@@ -15,7 +18,7 @@ const BlogDetail = () => {
   });
 
   const asd = async () => {
-    const response = await fetch("http://localhost:8000/blog/show/" + readId, {
+    const response = await fetch(`http://localhost:${port}/blog/show/` + readId, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

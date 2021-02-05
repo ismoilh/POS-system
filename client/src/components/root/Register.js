@@ -1,141 +1,3 @@
-// // export default Register
-
-// import React, { useState, useContext } from "react";
-// import { useHistory, Link } from "react-router-dom";
-// import UserContext from "../context/userContext";
-// import Axios from "axios";
-// import ErrorNotice from "../misc/ErrorNotice";
-// import { useStateValue } from "../../StateProvider";
-// import AuthOptions from "../auth/AuthOptions";
-// import "./style.css";
-// export default function Register() {
-//   const [email, setEmail] = useState();
-//   const [password, setPassword] = useState();
-//   const [passwordCheck, setPasswordCheck] = useState();
-//   const [username, setUsername] = useState();
-//   const [error, setError] = useState();
-
-//   const [black, setBlack] = useState(false);
-//   const history = useHistory();
-
-//   const submit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       const newUser = { email, password, passwordCheck, username };
-//       const registerUser = await Axios.post("http://localhost:8000/auth/register", newUser);
-//       setBlack(true);
-//     } catch (err) {
-//       err.response.data.msg && setError(err.response.data.msg);
-//     }
-//   };
-
-//   return (
-//     <>
-//       <div className="page">
-//         {black ? (
-//           <div className="blackSpace">
-//             <h2>
-//               Please verify your account by Link which we sent to mail{" "}
-//             </h2>
-//           </div>
-//         ) : (
-//             ""
-//           )}
-//         <div className="container d-flex justify-content-center align-items-center mt-5">
-//           <div className="row">
-//             <div className="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-//               <div className="card shadow">
-//                 <img
-//                   src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
-//                   alt=""
-//                   className="card-img-top"
-//                 />
-//                 <div className="card-body">
-//                   <h5 className="card-title">Register</h5>
-//                   <form onSubmit={submit} className="validated-form">
-//                     <div className="mb-3">
-//                       <label className="form-label" htmlFor="username">
-//                         Username
-//                       </label>
-//                       <input
-//                         className="form-control"
-//                         id="register-username"
-//                         type="text"
-//                         onChange={(e) => setUsername(e.target.value)}
-//                         name="username"
-//                         required
-//                         autoFocus
-//                       />
-//                       <div className="valid-feedback">Looks good!</div>
-//                     </div>
-//                     <div className="mb-3">
-//                       <label className="form-label" htmlFor="email">
-//                         Email
-//                       </label>
-//                       <input
-//                         className="form-control"
-//                         id="register-email"
-//                         type="email"
-//                         onChange={(e) => setEmail(e.target.value)}
-//                         name="email"
-//                         required
-//                       />
-//                       <div className="valid-feedback">Looks good!</div>
-//                     </div>
-//                     <div className="mb-3">
-//                       <label className="form-label" htmlFor="password">
-//                         Password
-//                       </label>
-//                       <input
-//                         className="form-control"
-//                         id="register-password"
-//                         type="password"
-//                         onChange={(e) => setPassword(e.target.value)}
-//                         name="password"
-//                         required
-//                       />
-//                       <div className="valid-feedback">Looks good!</div>
-//                     </div>
-//                     <div className="mb-3">
-//                       <label className="form-label" htmlFor="password">
-//                         Verify Password
-//                       </label>
-//                       <input
-//                         className="form-control"
-//                         type="password"
-//                         onChange={(e) => setPasswordCheck(e.target.value)}
-//                         required
-//                       />
-//                       <div className="valid-feedback">Looks good!</div>
-//                     </div>
-//                     <div className="mb-3">
-//                       {error && (
-//                         <ErrorNotice
-//                           message={error}
-//                           clearError={() => setError(undefined)}
-//                         />
-//                       )}
-//                     </div>
-//                     <button
-//                       type="submit"
-//                       value="Register"
-//                       className="btn btn-success btn-block"
-//                     >
-//                       Register
-//                     </button>
-//                     If you already have an account{" "}
-//                     <Link to="/login">Login</Link>
-//                   </form>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
 
 import React, { useState } from 'react';
 // import authSvg from '../assests/auth.svg';
@@ -146,6 +8,8 @@ import { Redirect } from 'react-router-dom';
 import './style.css'
 
 const Register = () => {
+
+  const port = process.env.PORT || 5000;
 
   const [alert, setAlert] = useState(false)
   const [notFilled, setNotFilled] = useState(false)
@@ -168,7 +32,7 @@ const Register = () => {
       if (password === passwordCheck) {
         setFormData({ ...formData, textChange: 'Submitting' });
         axios
-          .post('http://localhost:8000/auth/register', {
+          .post(`http://localhost:${port}/auth/register`, {
             username,
             email,
             password: password

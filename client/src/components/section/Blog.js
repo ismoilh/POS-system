@@ -10,10 +10,13 @@ const Blog = () => {
     token = "";
   }
 
+
+  const port = process.env.PORT || 5000;
+
   const [box, setBox] = useState({ posts: [] });
 
   const qwe = async () => {
-    const response = await fetch("http://localhost:8000/blog", {
+    const response = await fetch(`http://localhost:${port}/blog`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

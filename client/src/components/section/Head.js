@@ -18,11 +18,11 @@ const Head = () => {
         lat: null,
         lng: null
     })
-
+    const port = process.env.PORT || 5000;
 
     const start = async () => {
 
-        const response = await fetch('http://localhost:8000/location', {
+        const response = await fetch(`http://localhost:${port}/location`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
