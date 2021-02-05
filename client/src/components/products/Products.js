@@ -20,7 +20,7 @@ const Products = () => {
   const [{ userData }] = useStateValue()
 
   const qwe = async () => {
-    const response = await fetch('http://localhost:8000/menu', {
+    const response = await fetch('https://pacific-shelf-87157.herokuapp.com/menu', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const Products = () => {
                   id: post.id,
                   owner: userData.user.id
                 }
-                axios.post('http://localhost:8000/orders', box2)
+                axios.post('https://pacific-shelf-87157.herokuapp.com/orders', box2)
               }} className='addBtn'>Add to orders</button> : ''}
           </div>
 
