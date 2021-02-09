@@ -26,7 +26,7 @@ module.exports.register = async (req, res, next) => {
             subject: 'Account Activation Link',
             html: `
                 <h2>Please verify your account by given link</h2>
-                <p>https://pacific-shelf-87157.herokuapp.com/auth/activate/${token}</p>
+                <p>https://still-caverns-52359.herokuapp.com/auth/activate/${token}</p>
             `
         };
         mg.messages().send(data, function (err, body) {
