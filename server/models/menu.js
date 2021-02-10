@@ -21,6 +21,11 @@ const MenuSchema = new Schema({
         default: "false",
         enum: [true, false]
     },
+    size: {
+        type: String,
+        default: 'S',
+        enum: ["S", "M", "L", "X", "XL", "XXL"]
+    },
     quantity: {
         type: Number
     },
