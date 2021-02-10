@@ -37,8 +37,7 @@ const MenuSchema = new Schema({
     },
     images: [ImageSchema],
     price: {
-        type: Number,
-        default: [sizeSchema.price]
+        type: Number
     },
     description: String
 }, opts);
