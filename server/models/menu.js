@@ -6,6 +6,17 @@ const ImageSchema = new Schema({
     filename: String
 });
 
+const sizeSchema = new Schema({
+    size: {
+        type: String,
+        default: 'S',
+        enum: ["S", "M", "L", "X", "XL", "XXL"]
+    },
+    price: {
+        type: Number
+    }
+})
+
 
 ImageSchema.virtual('thumbnail').get(function () {
     return this.url.replace('/upload', '/upload/w_200');
@@ -21,11 +32,7 @@ const MenuSchema = new Schema({
         default: "false",
         enum: [true, false]
     },
-    size: {
-        type: String,
-        default: 'S',
-        enum: ["S", "M", "L", "X", "XL", "XXL"]
-    },
+    size: [sizeSchema],
     quantity: {
         type: Number
     },
