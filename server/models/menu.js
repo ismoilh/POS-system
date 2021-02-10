@@ -40,7 +40,7 @@ const MenuSchema = new Schema({
     price: {
         type: Number,
         default: [sizeSchema.price]
-    }
+    },
     description: String
 }, opts);
 
