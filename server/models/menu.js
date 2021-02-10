@@ -7,7 +7,7 @@ const ImageSchema = new Schema({
 });
 
 const sizeSchema = new Schema({
-    size: {
+    boy: {
         type: String,
         default: 'S',
         enum: ["S", "M", "L", "X", "XL", "XXL"]
