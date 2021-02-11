@@ -71,7 +71,8 @@ module.exports.create = async function (req, res) {
         price: req.body.price,
         desc: req.body.desc,
         owner: req.body.owner,
-        quantity: req.body.quantity
+        quantity: req.body.quantity,
+        sizePrice: req.body.sizePrice
     });
 
 

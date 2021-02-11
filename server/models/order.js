@@ -6,13 +6,13 @@ const { ObjectId } = mongoose.Schema;
 const OrderSchema = new Schema({
     title: { type: String },
     desc: { type: String },
+    sizePrice: { type: Number },
     price: { type: Number },
     status: { type: String, required: true, default: "placed" },
     created_at: {
         type: Date,
         default: Date.now
     },
-    sizePrice: Number,
     owner: { type: ObjectId, ref: "User" },
     user: { type: ObjectId, ref: "User" }
 });
