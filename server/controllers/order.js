@@ -3,7 +3,6 @@ const _ = require("lodash");
 const StateMachine = require("javascript-state-machine");
 const jwt = require('jsonwebtoken');
 const User = require("../models/user");
-const { LocalStorage } = require("node-localstorage");
 
 function createStateMachine(order) {
     return new StateMachine({

@@ -1,8 +1,5 @@
 const User = require('../models/user');
-const { registerValidation, loginValidation } = require('../validation');
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const Order = require('../models/order')
 const mailgun = require("mailgun-js");
 const DOMAIN = 'sandboxf5268c0f53644472a9b92825ef31e138.mailgun.org';
 const mg = mailgun({ apiKey: process.env.MAILGUN_APIKEY, domain: DOMAIN });
