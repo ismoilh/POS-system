@@ -52,7 +52,8 @@ module.exports.createOrder = (req, res) => {
                 (orde.desc = req.body.description),
                 (order.price = req.body.price),
                 (order.id = req.body.id),
-                (order.user = req.body.user)
+                (order.user = req.body.user),
+                (order.sizePrice = req.body.sizePrice)
 
             order
                 .save()

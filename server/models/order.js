@@ -12,6 +12,7 @@ const OrderSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    sizePrice: Number,
     owner: { type: ObjectId, ref: "User" },
     user: { type: ObjectId, ref: "User" }
 });
