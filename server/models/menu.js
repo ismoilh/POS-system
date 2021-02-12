@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Name = require("./category")
+const Category = require("./category")
 
 
 const ImageSchema = new Schema({
@@ -37,10 +37,12 @@ const MenuSchema = new Schema({
         default: "false",
         enum: [true, false]
     },
-    category: {
-        type: Schema.Types.ObjectId,
-        ref: "Category"
-    },
+    category: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Category'
+        }
+    ],
     size: [sizeSchema],
     quantity: {
         type: Number
@@ -53,15 +55,5 @@ const MenuSchema = new Schema({
     description: String
 }, opts);
 
-
-MenuSchema.post('findOneAndDelete', async function (doc) {
-    if (doc) {
-        await Review.deleteMany({
-            _id: {
-                $in: doc.reviews
-            }
-        })
-    }
-})
 
 module.exports = mongoose.model('Menu', MenuSchema);
