@@ -70,10 +70,10 @@ module.exports.create = async function (req, res) {
         price: req.body.price,
         desc: req.body.desc,
         owner: req.body.owner,
+        count: req.body.count,
         quantity: req.body.quantity,
         sizePrice: req.body.sizePrice
     });
-
 
     newOrder.save().then(order => res.json(order));
 };

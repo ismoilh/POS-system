@@ -16,6 +16,13 @@ const sizeSchema = new Schema({
     }
 })
 
+const categorySchema = new Schema({
+    category: {
+        type: String,
+        enum: ["Pizza", "Pasta", "Salat", "Getranke", "Burger", "Desert"]
+    }
+})
+
 
 ImageSchema.virtual('thumbnail').get(function () {
     return this.url.replace('/upload', '/upload/w_200');
@@ -31,11 +38,13 @@ const MenuSchema = new Schema({
         default: "false",
         enum: [true, false]
     },
+    category: [categorySchema],
     size: [sizeSchema],
     quantity: {
         type: Number
     },
     images: [ImageSchema],
+    count: { type: Number },
     price: {
         type: Number
     },
