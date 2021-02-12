@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const nameSchema = new Schema({
-    name: String,
-    required: true
+    name: String
 })
 
 module.exports = mongoose.model('Name', nameSchema);
