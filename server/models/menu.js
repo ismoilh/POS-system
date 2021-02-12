@@ -38,7 +38,7 @@ const MenuSchema = new Schema({
         enum: [true, false]
     },
     category: [{
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.Object,
         ref: "Category"
     }],
     size: [sizeSchema],
