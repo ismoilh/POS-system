@@ -37,10 +37,10 @@ const MenuSchema = new Schema({
         default: "false",
         enum: [true, false]
     },
-    category: [{
-        type: Schema.Types.Object,
+    category: {
+        type: Schema.Types.ObjectId,
         ref: "Category"
-    }],
+    },
     size: [sizeSchema],
     quantity: {
         type: Number
