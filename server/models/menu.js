@@ -20,12 +20,7 @@ const sizeSchema = new Schema({
     }
 })
 
-const categorySchema = new Schema({
-    category: {
-        type: String,
-        enum: [Name]
-    }
-})
+
 
 
 ImageSchema.virtual('thumbnail').get(function () {
@@ -42,7 +37,10 @@ const MenuSchema = new Schema({
         default: "false",
         enum: [true, false]
     },
-    category: [categorySchema],
+    category: [{
+        type: Schema.Types.ObjectId,
+        ref: "Category"
+    }],
     size: [sizeSchema],
     quantity: {
         type: Number
