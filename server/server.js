@@ -30,6 +30,7 @@ const blogRoutes = require('./routes/blog');
 const locationRoutes = require('./routes/location')
 const paymentRoute = require('./routes/payment')
 const paidRoute = require('./routes/paid')
+const categoryRoute = require('./routes/category')
 
 const AdminBro = require('admin-bro')
 const AdminBroExpressjs = require('admin-bro-expressjs')
@@ -149,6 +150,7 @@ app.use('/blog', blogRoutes);
 app.use('/location', locationRoutes);
 app.use('/charge', paymentRoute);
 app.use('/paid', paidRoute);
+app.use('/category', categoryRoute);
 
 const run = async () => {
     app.listen(port, (err) => {
