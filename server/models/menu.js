@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Name = require("./category")
+
 
 const ImageSchema = new Schema({
     url: String,
     filename: String
 });
+
+
 
 const sizeSchema = new Schema({
     boy: {
@@ -19,7 +23,7 @@ const sizeSchema = new Schema({
 const categorySchema = new Schema({
     category: {
         type: String,
-        enum: ["Pizza", "Pasta", "Salat", "Getranke", "Burger", "Desert"]
+        enum: [Name]
     }
 })
 
@@ -49,12 +53,6 @@ const MenuSchema = new Schema({
         type: Number
     },
     description: String
-}, opts);
-
-MenuSchema.virtual('properties.popUpMarkup').get(function () {
-    return `
-    <strong><a href="/menu/${this._id}">${this.title}</a><strong>
-    <p>${this.description.substring(0, 20)}...</p>`
 }, opts);
 
 

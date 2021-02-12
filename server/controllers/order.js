@@ -31,7 +31,6 @@ module.exports.index = (req, res) => {
 // Get a single order
 module.exports.show = function (req, res) {
     Order.findById(req.params.id)
-        .populate("owner")
         .exec(function (err, order) {
             if (err) {
                 return handleError(res, err);

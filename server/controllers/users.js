@@ -75,8 +75,7 @@ module.exports.login = async (req, res) => {
         if (!email || !password || !username)
             return res.status(400).json({ msg: "Not all fields have been entered." });
 
-        const user = await User.findOne({ email: email, username: username })
-            .populate('owner');
+        const user = await User.findOne({ email: email, username: username });
         if (!user)
             return res
                 .status(400)

@@ -4,7 +4,7 @@ const { cloudinary } = require("../cloudinary");
 
 
 module.exports.index = async (req, res) => {
-    const menu = await Menu.find({}).populate('popupText');
+    const menu = await Menu.find({})
     res.json(menu);
 }
 
