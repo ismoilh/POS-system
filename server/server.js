@@ -12,6 +12,7 @@ const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
 const MongoDBStore = require('connect-mongo')(session);
 const User = require('./models/user');
+const Category = require('./models/category')
 const Menu = require('./models/menu');
 const Blog = require('./models/blog');
 const Paid = require('./models/paid')
@@ -58,7 +59,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, Menu, Location, Blog, Paid],
+    resources: [User, Menu, Location, Blog, Paid, Category],
     rootPath: '/admin',
     branding: {
         companyName: 'Liferando',
