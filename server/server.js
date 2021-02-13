@@ -14,6 +14,7 @@ const MongoDBStore = require('connect-mongo')(session);
 const User = require('./models/user');
 const Category = require('./models/category')
 const Menu = require('./models/menu');
+const Sous = require('./models/sous');
 const Blog = require('./models/blog');
 const Paid = require('./models/paid')
 const Location = require('./models/location');
@@ -60,7 +61,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, Menu, Location, Blog, Paid, Category],
+    resources: [User, Menu, Location, Blog, Paid, Category, Sous],
     rootPath: '/admin',
     branding: {
         companyName: 'Liferando',

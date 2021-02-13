@@ -9,7 +9,6 @@ const PaidSchema = new Schema({
     owner: { type: String },
     address: { type: String },
     phone: { type: String },
-    count: { type: Number },
     created_at: {
         type: Date,
         default: Date.now

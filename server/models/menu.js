@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 const Category = require("./category")
 
 
+
 const ImageSchema = new Schema({
     url: String,
     filename: String
@@ -37,6 +38,12 @@ const MenuSchema = new Schema({
         default: "false",
         enum: [true, false]
     },
+    sous: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Sous'
+        }
+    ],
     category: [
         {
             type: mongoose.Schema.Types.ObjectId,
