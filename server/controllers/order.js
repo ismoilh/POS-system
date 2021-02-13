@@ -63,15 +63,13 @@ module.exports.createOrder = (req, res) => {
         .catch(err => res.status(400).json(`Error : ${err}`));
 }
 
-module.exports.create = async function (req, res) {
+module.exports.create = function (req, res) {
     const newOrder = new Order({
         title: req.body.title,
         price: req.body.price,
         desc: req.body.desc,
         owner: req.body.owner,
         count: req.body.count,
-        quantity: req.body.quantity,
-        sizePrice: req.body.sizePrice,
         sous: req.body.souses
     });
 
