@@ -15,6 +15,7 @@ const User = require('./models/user');
 const Category = require('./models/category')
 const Menu = require('./models/menu');
 const Sous = require('./models/sous');
+const Distance = require('./models/distance');
 const Blog = require('./models/blog');
 const Paid = require('./models/paid')
 const Location = require('./models/location');
@@ -27,6 +28,7 @@ const jsonwebtoken = require("jsonwebtoken");
 const userRoutes = require('./routes/users');
 const menuRoutes = require('./routes/menu');
 const orderRoutes = require('./routes/order');
+const distRoutes = require('./routes/distance');
 const blogRoutes = require('./routes/blog');
 const locationRoutes = require('./routes/location')
 const paymentRoute = require('./routes/payment')
@@ -61,7 +63,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, Menu, Location, Blog, Paid, Category, Sous],
+    resources: [User, Menu, Location, Blog, Paid, Category, Sous, Distance],
     rootPath: '/admin',
     branding: {
         companyName: 'Liferando',
@@ -152,6 +154,7 @@ app.use('/location', locationRoutes);
 app.use('/charge', paymentRoute);
 app.use('/paid', paidRoute);
 app.use('/category', categoryRoute);
+app.use('/distance', distRoutes);
 
 const run = async () => {
     app.listen(port, (err) => {

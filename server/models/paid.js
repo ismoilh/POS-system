@@ -8,6 +8,7 @@ const PaidSchema = new Schema({
     price: { type: Number },
     owner: { type: String },
     address: { type: String },
+    sous: { type: String },
     phone: { type: String },
     created_at: {
         type: Date,

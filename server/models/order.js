@@ -8,6 +8,7 @@ const OrderSchema = new Schema({
     desc: { type: String },
     sizePrice: { type: Number },
     price: { type: Number },
+    sous: { type: String },
     count: { type: Number },
     status: { type: String, required: true, default: "placed" },
     created_at: {
