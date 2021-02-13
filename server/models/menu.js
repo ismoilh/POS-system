@@ -47,6 +47,12 @@ const MenuSchema = new Schema({
             ref: 'Sous'
         }
     ],
+    size: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Size'
+        }
+    ],
     category: [
         {
             type: mongoose.Schema.Types.ObjectId,
