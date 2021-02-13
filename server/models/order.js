@@ -2,16 +2,13 @@ const mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 const { ObjectId } = mongoose.Schema;
 
-const sousSchema = new Schema({
-    sous: String
-});
 
 const OrderSchema = new Schema({
     title: { type: String },
     desc: { type: String },
     sizePrice: { type: Number },
     price: { type: Number },
-    sous: [sousSchema],
+    sous: [{ type: String }],
     count: { type: Number },
     status: { type: String, required: true, default: "placed" },
     created_at: {
