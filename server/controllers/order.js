@@ -43,27 +43,27 @@ module.exports.show = function (req, res) {
             return res.json(order);
         });
 };
-module.exports.createOrder = (req, res) => {
-    Order.findById(req.params.id)
-        .then(order => {
-            (order.title = req.body.title),
-                (orde.desc = req.body.description),
-                (order.price = req.body.price),
-                (order.id = req.body.id),
-                (order.user = req.body.user),
-                (order.sizePrice = req.body.sizePrice)
+// module.exports.createOrder = (req, res) => {
+//     Order.findById(req.params.id)
+//         .then(order => {
+//             (order.title = req.body.title),
+//                 (orde.desc = req.body.description),
+//                 (order.price = req.body.price),
+//                 (order.id = req.body.id),
+//                 (order.user = req.body.user),
+//                 (order.sizePrice = req.body.sizePrice)
 
-            order
-                .save()
-                .then(() => res.json("Order updated!"))
-                .catch(err => {
-                    res.status(400).json(`Error : ${err}`);
-                });
-        })
-        .catch(err => res.status(400).json(`Error : ${err}`));
-}
+//             order
+//                 .save()
+//                 .then(() => res.json("Order updated!"))
+//                 .catch(err => {
+//                     res.status(400).json(`Error : ${err}`);
+//                 });
+//         })
+//         .catch(err => res.status(400).json(`Error : ${err}`));
+// }
 
-module.exports.create = function (req, res) {
+module.exports.create = (req, res) => {
     const newOrder = new Order({
         title: req.body.title,
         price: req.body.price,

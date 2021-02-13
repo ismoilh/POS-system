@@ -3,7 +3,6 @@ const router = express.Router();
 const controller = require('../controllers/order');
 const auth = require('../schemas');
 const cors = require('cors');
-const { isAuthor } = require('../middleware')
 
 
 
