@@ -7,7 +7,7 @@ const OrderSchema = new Schema({
     title: { type: String },
     desc: { type: String },
     sizePrice: { type: Number },
-    price: { type: Number },
+    price: [{ type: Number }],
     sous: [{ type: String }],
     count: { type: Number },
     status: { type: String, required: true, default: "placed" },
@@ -15,8 +15,7 @@ const OrderSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    owner: { type: ObjectId, ref: "User" },
-    user: { type: ObjectId, ref: "User" }
+    owner: { type: ObjectId, ref: "User" }
 });
 
 module.exports = Order = mongoose.model("Order", OrderSchema);
