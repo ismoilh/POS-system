@@ -66,6 +66,7 @@ module.exports.show = function (req, res) {
 module.exports.create = (req, res) => {
     const newOrder = new Order({
         title: req.body.title,
+        sizePrice: req.body.sizePrice,
         price: req.body.price,
         desc: req.body.desc,
         owner: req.body.owner,
