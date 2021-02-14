@@ -18,7 +18,6 @@ const Sous = require('./models/sous');
 const Distance = require('./models/distance');
 const Blog = require('./models/blog');
 const Paid = require('./models/paid');
-const Size = require('./models/size');
 const Location = require('./models/location');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
@@ -64,7 +63,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, Menu, Location, Blog, Paid, Category, Sous, Distance, Size],
+    resources: [User, Menu, Location, Blog, Paid, Category, Sous, Distance],
     rootPath: '/admin',
     branding: {
         companyName: 'Liferando',
