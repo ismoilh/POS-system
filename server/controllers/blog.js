@@ -6,7 +6,7 @@ const Blog = require('../models/blog')
 
 module.exports.index = async (req, res) => {
     const campgrounds = await Blog.find({})
-    res.json({ campgrounds })
+    res.json(campgrounds)
 }
 
 

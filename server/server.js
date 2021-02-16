@@ -56,7 +56,7 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
-
+0
 const port = process.env.PORT || 8000;
 const app = express();
 
@@ -125,10 +125,6 @@ app.use(session(sessionConfig))
 app.use(flash());
 
 
-const ADMIN = {
-    email: process.env.ADMIN_EMAIL || 'admin@example.com',
-    password: process.env.ADMIN_PASSWORD || 'lovejs'
-}
 
 
 app.use(function (req, res, next) {

@@ -1,7 +1,7 @@
 const Distance = require("../models/distance")
 
 
-module.exports.showDist = () => {
+module.exports.showDist = (req, res) => {
     Distance.find()
         .then(data => {
             res.json(data)
