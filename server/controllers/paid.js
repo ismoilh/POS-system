@@ -15,7 +15,7 @@ module.exports.payment = async (req, res) => {
 
 module.exports.payid = (req, res) => {
     Paid.find({})
-        .sort( "created_at": -1 )
+        .sort({ "created_at": -1 })
         .then((data) => {
             res.json(data);
             console.log(data)
