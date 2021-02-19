@@ -27,6 +27,7 @@ const jsonwebtoken = require("jsonwebtoken");
 
 const userRoutes = require('./routes/users');
 const menuRoutes = require('./routes/menu');
+const deliveryRoutes = require('./routes/email');
 const orderRoutes = require('./routes/order');
 const distRoutes = require('./routes/distance');
 const blogRoutes = require('./routes/blog');
@@ -151,6 +152,7 @@ app.use('/charge', paymentRoute);
 app.use('/paid', paidRoute);
 app.use('/category', categoryRoute);
 app.use('/distance', distRoutes);
+app.use('/delivery', deliveryRoutes)
 
 const run = async () => {
     app.listen(port, (err) => {
