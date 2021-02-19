@@ -10,7 +10,7 @@ module.exports.sent = async (req, res) => {
         to: email,
         subject: 'We received your order',
         html: `
-            <h2>Thank you for chosing our restaurant your food will come at ${time}</h2>
+            <h2>Thank you for chosing our restaurant your food will come in ${time} minutes</h2>
         `
     };
     mg.messages().send(data, function (err, body) {
