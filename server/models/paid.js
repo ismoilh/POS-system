@@ -7,6 +7,7 @@ const PaidSchema = new Schema({
     title: [{ type: Array }],
     price: { type: Number },
     owner: { type: String },
+    owe: { type: String },
     address: { type: String },
     phone: { type: String },
     created_at: {
