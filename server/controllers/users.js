@@ -132,10 +132,10 @@ module.exports.tokenIsValid = async (req, res) => {
 module.exports.bonus = async (req, res) => {
     try {
         const { bonus } = req.body;
-        const { id } = req.params;
-        const b = User.findOne(id, { bonusFull });
+        const { _id } = req.params;
+        const b = User.findOne(_id, { bonusFull });
         let sum = await bonus + b;
-        const full = await User.findByIdAndUpdate(id, { ...sum });
+        const full = await User.findByIdAndUpdate(_id, { ...sum });
         await full.save()
     } catch (err) {
         res.status(500).json({ error: err.message });
