@@ -8,9 +8,10 @@ const PaidSchema = new Schema({
     price: { type: Number },
     owner: { type: String },
     address: { type: String },
+    bonus: { type: Number },
     phone: { type: String },
     created_at: {
-        type: Date,
+        type: Date(toDateString()),
         default: Date.now
     }
 })

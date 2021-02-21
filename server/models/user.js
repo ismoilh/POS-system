@@ -30,6 +30,9 @@ const UserSchema = new Schema({
         default: "user",
         enum: ["user", "admin"]
     },
+    bonusFull: {
+        type: Number
+    },
     created: {
         type: Date,
         default: Date.now
