@@ -26,6 +26,9 @@ router.route('/delete/:id', auth)
 router.route('/tokenIsValid')
     .post(users.tokenIsValid);
 
+router.route('/:id/bonus')
+    .put(users.bonus);
+
 router.route('/', auth)
     .get(users.mainPage);
 
