@@ -132,7 +132,7 @@ module.exports.tokenIsValid = async (req, res) => {
 module.exports.bonus = async (req, res) => {
     try {
         const { bonus } = req.body;
-        const { id } = req.params
+        const { id } = req.params;
         const b = User.findOne(id, { bonusFull });
         let sum = await bonus + b;
         const full = await User.findByIdAndUpdate(id, { ...sum });

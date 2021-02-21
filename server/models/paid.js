@@ -11,7 +11,7 @@ const PaidSchema = new Schema({
     bonus: { type: Number },
     phone: { type: String },
     created_at: {
-        type: Date(toDateString()),
+        type: Date,
         default: Date.now
     }
 })
