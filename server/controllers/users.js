@@ -132,13 +132,7 @@ module.exports.tokenIsValid = async (req, res) => {
 module.exports.bonus = async (req, res) => {
     try {
         const { id } = req.params;
-        User.findByIdAndUpdate(id, { $set: { bousFull: req.body.bonus } }, (req, res) => {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log('Bonus added')
-            }
-        })
+        User.findByIdAndUpdate(id, { $set: { bousFull: req.body.bonus } })
 
     } catch (err) {
         res.status(500).json({ error: err.message })
