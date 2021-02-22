@@ -140,11 +140,26 @@ module.exports.data = async (req, res) => {
 module.exports.bonus = async (req, res) => {
     try {
         const myQuery = { _id: req.body.id }
+        const { bonusm } = req.body;
+        const { bonus } = req.body;
         const user = await User.findById({ _id: req.body.id })
             .then(data => {
-                const d = data.bonusFull + req.body.bonus
-                const newData = { bonusFull: d }
-                User.updateOne(myQuery, newData, function (err, res) {
+                const d = (data.bonusFull) + bonus
+                const s = (data.bonusFull) - bonusm
+                function confirmed() {
+                    if (!bonusm) {
+                        const d = (data.bonusFull) + bonus
+                        const newData = { bonusFull: d }
+                        return newData;
+                    } else {
+                        const s = (data.bonusFull) - bonusm
+                        const newData = { bonusFull: s }
+                        return newData;
+                    }
+                }
+                // const newData = { bonusFull: d }
+                // const newData = { bonusFull: s }
+                User.updateOne(myQuery, confirmed(), function (err, res) {
                     if (err) throw err;
                     console.log("1 document updated");
                 }).then(data => {
