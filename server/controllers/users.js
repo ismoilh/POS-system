@@ -129,6 +129,14 @@ module.exports.tokenIsValid = async (req, res) => {
     }
 }
 
+module.exports.data = async (req, res) => {
+    const { id } = req.params;
+    await User.findById(id)
+        .then(data => {
+            res.status(200).json(data);
+        })
+}
+
 module.exports.bonus = async (req, res) => {
     try {
         const myQuery = { _id: req.body.id }

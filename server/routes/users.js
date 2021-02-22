@@ -8,6 +8,9 @@ const auth = require('../schemas');
 router.use(cors());
 
 
+router.route('/:id/')
+    .get(users.data)
+
 
 
 router.route('/register')
