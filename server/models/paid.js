@@ -10,6 +10,7 @@ const PaidSchema = new Schema({
     address: { type: String },
     bonus: { type: Number },
     phone: { type: String },
+    bonus: { type: Number },
     created_at: {
         type: Date,
         default: Date.now

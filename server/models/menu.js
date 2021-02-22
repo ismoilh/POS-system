@@ -41,6 +41,12 @@ const MenuSchema = new Schema({
         default: "false",
         enum: [true, false]
     },
+    discount: {
+        type: Number
+    },
+    bonusPrice: {
+        type: Number
+    },
     sous: [
         {
             type: mongoose.Schema.Types.ObjectId,
