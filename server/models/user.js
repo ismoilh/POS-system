@@ -5,6 +5,10 @@ const Order = require('./order')
 
 
 const UserSchema = new Schema({
+    bonusFull: {
+        type: Number,
+        default: 0
+    },
     username: {
         type: String,
         required: true,
@@ -29,9 +33,6 @@ const UserSchema = new Schema({
         required: true,
         default: "user",
         enum: ["user", "admin"]
-    },
-    bonusFull: {
-        type: Number
     },
     created: {
         type: Date,

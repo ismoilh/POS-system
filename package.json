@@ -45,7 +45,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server/server.js"
+    "start": "nodemon server/server.js"
   },
   "engines": {
     "node": "14.15.4"

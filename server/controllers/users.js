@@ -131,14 +131,19 @@ module.exports.tokenIsValid = async (req, res) => {
 
 module.exports.bonus = async (req, res) => {
     try {
-        const { bonus, email } = req.body;
-        const b = User.findOne({ email: email, bonusFull });
-        let sum = await bonus + b;
-        const full = await User.findOneAndUpdate({ email: email, ...sum });
-        await full.save()
+        const { id } = req.params;
+        User.findByIdAndUpdate(id, { $set: { bousFull: req.body.bonus } }, (req, res) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log('Bonus added')
+            }
+        })
+
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: err.message })
     }
+
 }
 
 module.exports.mainPage = async (req, res) => {
