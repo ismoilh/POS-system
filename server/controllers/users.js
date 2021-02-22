@@ -131,9 +131,16 @@ module.exports.tokenIsValid = async (req, res) => {
 
 module.exports.bonus = async (req, res) => {
     try {
-        const { id } = req.params;
-        User.findByIdAndUpdate(id, { $set: { bousFull: req.body.bonus } })
-
+        const myQuery = { _id: req.body.id }
+        const newData = { bonusFull: req.body.bonus };
+        console.log(myQuery)
+        console.log(newData)
+        User.updateOne(myQuery, newData, function (err, res) {
+            if (err) throw err;
+            console.log("1 document updated");
+        }).then(data => {
+            console.log(data)
+        })
     } catch (err) {
         res.status(500).json({ error: err.message })
     }
