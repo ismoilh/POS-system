@@ -132,15 +132,17 @@ module.exports.tokenIsValid = async (req, res) => {
 module.exports.bonus = async (req, res) => {
     try {
         const myQuery = { _id: req.body.id }
-        const newData = { bonusFull: req.body.bonus };
-        console.log(myQuery)
-        console.log(newData)
-        User.updateOne(myQuery, newData, function (err, res) {
-            if (err) throw err;
-            console.log("1 document updated");
-        }).then(data => {
-            console.log(data)
-        })
+        const user = await User.findById({ _id: req.body.id })
+            .then(data => {
+                const d = data.bonusFull + req.body.bonus
+                const newData = { bonusFull: d }
+                User.updateOne(myQuery, newData, function (err, res) {
+                    if (err) throw err;
+                    console.log("1 document updated");
+                }).then(data => {
+                    res.status(200).json(data)
+                })
+            })
     } catch (err) {
         res.status(500).json({ error: err.message })
     }
