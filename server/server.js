@@ -12,6 +12,7 @@ const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
 const MongoDBStore = require('connect-mongo')(session);
 const User = require('./models/user');
+const Bonus = require('./models/bonus')
 const Category = require('./models/category')
 const Menu = require('./models/menu');
 const Sous = require('./models/sous');
@@ -25,6 +26,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const jsonwebtoken = require("jsonwebtoken");
 
+const BonusRoutes = require('./routes/bonus')
 const userRoutes = require('./routes/users');
 const menuRoutes = require('./routes/menu');
 const deliveryRoutes = require('./routes/email');
@@ -64,7 +66,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, Menu, Location, Blog, Paid, Category, Sous, Distance],
+    resources: [User, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus],
     rootPath: '/admin',
     branding: {
         companyName: 'Liferando',
@@ -147,6 +149,7 @@ app.use('/auth/', userRoutes);
 app.use('/menu', menuRoutes);
 app.use('/orders', orderRoutes);
 app.use('/blog', blogRoutes);
+app.use('/bonus', BonusRoutes);
 app.use('/location', locationRoutes);
 app.use('/charge', paymentRoute);
 app.use('/paid', paidRoute);
