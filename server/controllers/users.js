@@ -23,7 +23,7 @@ module.exports.register = async (req, res, next) => {
             subject: 'Account Activation Link',
             html: `
                 <h2>Please verify your account by given link</h2>
-                <p>http://localhost:3000/auth/activate/${token}</p>
+                <p>https://lieferando-frontend.vercel.app/auth/activate/${token}</p>
             `
         };
         mg.messages().send(data, function (err, body) {
