@@ -21,6 +21,9 @@ const sizeSchema = new Schema({
     },
     price: {
         type: Number
+    },
+    bonusPrice: {
+        type: Number
     }
 })
 
