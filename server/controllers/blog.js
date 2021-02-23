@@ -5,8 +5,14 @@ const Blog = require('../models/blog')
 
 
 module.exports.index = async (req, res) => {
-    const campgrounds = await Blog.find({})
-    res.json(campgrounds)
+    const { id } = req.params;
+    await Blog.find(id)
+        .then(data => {
+            res.status(200).json(data)
+        })
+        .catch(err => {
+            res.status(500).json({ error: err.message })
+        })
 }
 
 
