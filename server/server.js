@@ -16,8 +16,10 @@ const Bonus = require('./models/bonus')
 const Category = require('./models/category')
 const Menu = require('./models/menu');
 const Sous = require('./models/sous');
+const ClosingTime = require('./models/time');
 const Distance = require('./models/distance');
 const Blog = require('./models/blog');
+const Mail = require('./models/mail')
 const Paid = require('./models/paid');
 const Location = require('./models/location');
 const flash = require('connect-flash');
@@ -32,6 +34,7 @@ const menuRoutes = require('./routes/menu');
 const deliveryRoutes = require('./routes/email');
 const orderRoutes = require('./routes/order');
 const distRoutes = require('./routes/distance');
+const TimeRoutes = require('./routes/time');
 const blogRoutes = require('./routes/blog');
 const locationRoutes = require('./routes/location')
 const paymentRoute = require('./routes/payment')
@@ -66,7 +69,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus],
+    resources: [User, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime],
     rootPath: '/admin',
     branding: {
         companyName: 'Liferando',
@@ -155,7 +158,8 @@ app.use('/charge', paymentRoute);
 app.use('/paid', paidRoute);
 app.use('/category', categoryRoute);
 app.use('/distance', distRoutes);
-app.use('/delivery', deliveryRoutes)
+app.use('/delivery', deliveryRoutes);
+app.use('/time', TimeRoutes);
 
 const run = async () => {
     app.listen(port, (err) => {
