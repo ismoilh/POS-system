@@ -9,6 +9,7 @@ const PaidSchema = new Schema({
     owner: { type: String },
     address: { type: String },
     bonus: { type: Number },
+    bonusPrice: { type: Number },
     phone: { type: String },
     bonus: { type: Number },
     created_at: {

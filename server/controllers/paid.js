@@ -8,6 +8,7 @@ module.exports.payment = async (req, res) => {
         owner: req.body.owner,
         address: req.body.address,
         phone: req.body.phone1,
+        bonusPrice: req.body.bonusm,
         bonus: req.body.bonus
     })
     paid.save().then(order => res.json(order)
