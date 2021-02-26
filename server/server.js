@@ -21,6 +21,7 @@ const Distance = require('./models/distance');
 const Blog = require('./models/blog');
 const Mail = require('./models/mail')
 const Paid = require('./models/paid');
+const PhoneNumber = require('./models/phone')
 const Location = require('./models/location');
 const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
@@ -31,6 +32,7 @@ const jsonwebtoken = require("jsonwebtoken");
 const BonusRoutes = require('./routes/bonus')
 const userRoutes = require('./routes/users');
 const menuRoutes = require('./routes/menu');
+const phoneRoutes = require('./routes/phone')
 const deliveryRoutes = require('./routes/email');
 const orderRoutes = require('./routes/order');
 const distRoutes = require('./routes/distance');
@@ -69,7 +71,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime],
+    resources: [User, PhoneNumber, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime],
     rootPath: '/admin',
     branding: {
         companyName: 'Liferando',
@@ -149,6 +151,7 @@ app.use(function (req, res, next) {
 
 
 app.use('/auth/', userRoutes);
+app.use('/phone', phoneRoutes);
 app.use('/menu', menuRoutes);
 app.use('/orders', orderRoutes);
 app.use('/blog', blogRoutes);

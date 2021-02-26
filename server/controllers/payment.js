@@ -1,6 +1,5 @@
 const stripe = require("stripe")("sk_test_51IBmoSFMbvzHsJfjdKV1ifn6fuNoLFtjTeVxAXS6zU08tPbNpiXUBSud5quLpqVZPyLqyrgfjtzmgJB0amHUUciB00mRgVl6Mj");
 const { v4: uuid } = require('uuid')
-const Payment = require('../models/payment')
 
 module.exports.payment = (req, res) => {
     const { product, token } = req.body;

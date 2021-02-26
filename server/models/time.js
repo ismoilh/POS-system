@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 
 const timeSchema = new Schema({
-    ClosingTime: Number
+    ClosingTime: Number,
+    OpeningTime: Number
 })
 
 module.exports = mongoose.model('Time', timeSchema);
