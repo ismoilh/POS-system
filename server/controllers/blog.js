@@ -25,15 +25,13 @@ module.exports.createCampground = async (req, res) => {
     await campground.save().then(blog => res.json(blog));
 }
 
-module.exports.showBlog = (req, res) => {
-    Blog.findById(req.params.id)
-        .exec(function (err, blog) {
-            if (err) {
-                res.send(err)
-            }
-            if (!blog) {
-                res.status(404)
-            }
-            res.json(blog);
+module.exports.showBlog = async (req, res) => {
+    const { id } = req.params
+    await Blog.findById(id)
+        .then(data => {
+            res.json(data)
+        })
+        .catch(err => {
+            res.status(500).json({ error: err.message })
         })
 }
