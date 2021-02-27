@@ -11,7 +11,7 @@ router.use(cors());
 
 
 
-router.route('/:id/')
+router.route('/')
     .get(catchAsync(blog.index))
     .post(blog.createCampground)
 
