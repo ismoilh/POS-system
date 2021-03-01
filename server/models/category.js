@@ -9,7 +9,8 @@ const ImageSchema = new Schema({
 
 const nameSchema = new Schema({
     name: String,
-    images: [ImageSchema]
+    images: [ImageSchema],
+    discount: Number
 })
 
 module.exports = mongoose.model('Category', nameSchema);
