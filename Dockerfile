@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD [ "npm", "run", "pm2"]
+CMD ["pm2-runtime", "./server/server.js"]
