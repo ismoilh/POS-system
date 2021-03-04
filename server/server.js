@@ -77,11 +77,22 @@ const adminBro = new AdminBro({
     resources: [User, PhoneNumber, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime, Siparisler, PizzaParts],
     rootPath: '/admin',
     branding: {
-        companyName: 'Liferando',
+        companyName: 'CHEF FOOD24',
     }
 })
 
-const router = AdminBroExpressjs.buildRouter(adminBro)
+const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
+    authenticate: async (email, password) => {
+        const user = await User.findOne({ email })
+        if (user) {
+            if (password === user.password && user.role === 'admin') {
+                return user
+            }
+        }
+        return false
+    },
+    cookiePassword: 'session Key',
+})
 
 
 app.use(adminBro.options.rootPath, router)
