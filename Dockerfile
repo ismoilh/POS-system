@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD [ "pm2-runtime", "start" ]
+CMD [ "npm", "run", "pm2"]

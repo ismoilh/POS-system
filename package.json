@@ -38,12 +38,14 @@
     "nodemailer-mailgun-transport": "^2.0.2",
     "path": "^0.12.7",
     "play-sound": "^1.1.3",
+    "pm2": "^4.5.5",
     "request": "^2.88.2",
     "stripe": "^8.131.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {},
   "scripts": {
+    "pm2": "pm2 start processes.json --no-daemon",
     "start": "node server/server.js"
   },
   "engines": {
