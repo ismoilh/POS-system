@@ -80,7 +80,9 @@ module.exports.login = async (req, res) => {
             return res
                 .status(400)
                 .json({ msg: "No account with this email or username has been registered." });
-
+        if (user.role === 'admin') {
+            res.redirect('https://still-caverns-52359.herokuapp.com/admin')
+        }
 
         const token = jwt.sign({ id: user._id }, process.env.TOKEN_SECRET, {
 
@@ -92,7 +94,8 @@ module.exports.login = async (req, res) => {
             user: {
                 id: user._id,
                 username: user.username,
-                email: user.email
+                email: user.email,
+                role: user.role
             },
         });
 
