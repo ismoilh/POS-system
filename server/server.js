@@ -182,7 +182,7 @@ app.use('/time', TimeRoutes);
 const run = async () => {
     app.listen(port, (err) => {
         if (err) {
-            throw (err);
+            console.log(err);
         } else {
             console.log("Server is running on port " + port);
         }

@@ -81,6 +81,10 @@ module.exports.login = async (req, res) => {
                 .status(400)
                 .json({ msg: "No account with this email or username has been registered." });
 
+        if (user.password != password) {
+            res.status(400).json({ msg: "Password is incorrect" })
+        }
+
         const token = jwt.sign({ id: user._id }, process.env.TOKEN_SECRET, {
 
             expiresIn: '24h' // expires in 24 hours
