@@ -10,7 +10,9 @@ const ImageSchema = new Schema({
 const nameSchema = new Schema({
     name: String,
     images: [ImageSchema],
-    discount: Number
+    discount: Number,
+    OpeningTime: Number,
+    ClosingTime: Number
 })
 
 module.exports = mongoose.model('Category', nameSchema);
