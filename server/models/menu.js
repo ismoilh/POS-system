@@ -36,7 +36,6 @@ ImageSchema.virtual('thumbnail').get(function () {
 
 const opts = { toJSON: { virtuals: true } };
 
-
 const MenuSchema = new Schema({
     title: String,
     stock: {
@@ -78,8 +77,8 @@ const MenuSchema = new Schema({
         type: Number
     },
     description: String,
-    OpeningTime: Number,
-    ClosingTime: Number
+    OpeningTime: Date,
+    ClosingTime: Date
 }, opts);
 
 
