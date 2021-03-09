@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 
 const timeSchema = new Schema({
-    ClosingTime: Number,
-    OpeningTime: Number,
-    KendimOpen: Number,
-    KendimClose: Number
+    ClosingTime: Date,
+    OpeningTime: Date,
+    KendimOpen: Date,
+    KendimClose: Date
 })
 
 module.exports = mongoose.model('Time', timeSchema);
