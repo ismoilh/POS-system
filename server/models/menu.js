@@ -77,8 +77,8 @@ const MenuSchema = new Schema({
         type: Number
     },
     description: String,
-    OpeningTime: Date,
-    ClosingTime: Date
+    OpeningTime: Number,
+    ClosingTime: Number
 }, opts);
 
 
