@@ -77,7 +77,9 @@ const adminBro = new AdminBro({
     resources: [User, PhoneNumber, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime, Siparisler, PizzaParts],
     rootPath: '/admin',
     branding: {
-        companyName: 'CHEF FOOD24',
+        logo: false,
+        companyName: 'Dogunet',
+        softwareBrothers: false
     }
 })
 
