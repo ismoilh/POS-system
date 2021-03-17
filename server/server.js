@@ -21,6 +21,7 @@ const ClosingTime = require('./models/time');
 const Distance = require('./models/distance');
 const Blog = require('./models/blog');
 const Mail = require('./models/mail');
+const Paket = require('./models/paket')
 const Paid = require('./models/paid');
 const PizzaParts = require('./models/parts');
 const PhoneNumber = require('./models/phone');
@@ -35,6 +36,7 @@ const BonusRoutes = require('./routes/bonus')
 const PartRoutes = require('./routes/parts');
 const userRoutes = require('./routes/users');
 const menuRoutes = require('./routes/menu');
+const paketRoutes = require('./routes/paket');
 const phoneRoutes = require('./routes/phone')
 const deliveryRoutes = require('./routes/email');
 const orderRoutes = require('./routes/order');
@@ -74,7 +76,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, PhoneNumber, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime, Siparisler, PizzaParts],
+    resources: [User, PhoneNumber, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime, Siparisler, PizzaParts, Paket],
     rootPath: '/admin',
     branding: {
         logo: false,
@@ -179,6 +181,7 @@ app.use('/parts', PartRoutes);
 app.use('/category', categoryRoute);
 app.use('/distance', distRoutes);
 app.use('/delivery', deliveryRoutes);
+app.use('/paket', paketRoutes);
 app.use('/time', TimeRoutes);
 
 const run = async () => {

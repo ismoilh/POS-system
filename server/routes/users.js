@@ -12,6 +12,9 @@ router.route('/:id/')
     .get(users.data)
 
 
+router.route('/')
+    .get(users.allUsers)
+
 
 router.route('/register')
     .post(users.register);

@@ -41,6 +41,13 @@ module.exports.getToken = (req, res) => {
 
 }
 
+module.exports.allUsers = (req, res) => {
+    User.find({ role: "paketci" })
+        .then(data => {
+            res.status(200).json(data)
+        })
+}
+
 module.exports.activateAccount = (req, res) => {
     const { token } = req.body;
     if (token) {
