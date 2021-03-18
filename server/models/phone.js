@@ -4,7 +4,12 @@ const mongoose = require("mongoose"),
 const phoneSchema = new Schema({
     phone: String,
     email: String,
-    terms: String
+    terms: String,
+    servisYap: {
+        type: Boolean,
+        default: true,
+        enum: [true, false]
+    }
 })
 
 module.exports = mongoose.model("Phone", phoneSchema);

@@ -10,6 +10,7 @@ const PaidSchema = new Schema({
     address: { type: String },
     bonus: { type: Number },
     bonusPrice: { type: Number },
+    extra: { type: String },
     phone: { type: String },
     bonus: { type: Number },
     created_at: {
