@@ -1,25 +1,18 @@
-const Paid = require("../models/paket");
+const Paket = require('../models/paket')
 
 
-module.exports.payment = async (req, res) => {
-    const paid = new Paid({
+module.exports.createPaket = async (req, res) => {
+    const paid = new Paket({
         price: req.body.price,
         owner: req.body.owner,
         address: req.body.address,
-        phone: req.body.phone1,
-        paketcid: req.body.paketcid
-    })
-    paid.save().then(order => res.json(order)
-    );
+        phone: req.body.phone,
+        paketciId: req.body.id
+    });
+    await paid.save().then(data => res.json(data));
 }
 
-module.exports.payid = (req, res) => {
-    Paid.find({})
-        .then((data) => {
-            res.json(data);
-            console.log(data)
-        }).catch(err => {
-            res.status(400);
-            console.log(err);
-        })
+module.exports.payid = async (req, res) => {
+    const menu = await Paket.find({});
+    res.json(menu);
 }

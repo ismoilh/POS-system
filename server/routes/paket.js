@@ -8,8 +8,8 @@ router.use(cors());
 
 
 router.route("/")
-    .get(paid.payment)
-    .post(paid.payid);
+    .get(paid.payid)
+    .post(paid.createPaket);
 
 
 module.exports = router;

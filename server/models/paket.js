@@ -1,14 +1,12 @@
-const mongoose = require("mongoose"),
-    Schema = mongoose.Schema;
-const { ObjectId } = mongoose.Schema;
-
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const PaketSchema = new Schema({
-    price: { type: Number },
-    owner: { type: String },
-    address: { type: String },
-    phone: { type: String },
-    paketcid: { type: ObjectId, ref: "User" }
+    price: Number,
+    owner: String,
+    address: String,
+    phone: String,
+    paketciId: String
 })
 
-module.exports = Paket = mongoose.model("Paket", PaketSchema);
+module.exports = mongoose.model('Paket', PaketSchema);
