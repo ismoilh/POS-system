@@ -8,7 +8,7 @@ router.use(cors());
 
 
 router.route("/")
-    .get(paid.payid)
+    .get(paid.pay)
     .post(paid.createPaket);
 
 

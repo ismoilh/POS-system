@@ -12,7 +12,7 @@ module.exports.createPaket = async (req, res) => {
     await paid.save().then(data => res.json(data));
 }
 
-module.exports.payid = async (req, res) => {
+module.exports.pay = async (req, res) => {
     const menu = await Paket.find({});
     res.json(menu);
 }
