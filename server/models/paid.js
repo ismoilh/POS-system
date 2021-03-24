@@ -13,7 +13,7 @@ const PaidSchema = new Schema({
     extra: { type: String },
     phone: { type: String },
     bonus: { type: Number },
-    time: { type: String }, c
+    time: { type: String },
     created_at: {
         type: Date,
         default: Date.now
