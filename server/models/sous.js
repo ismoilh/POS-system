@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 
 const sousSchema = new Schema({
-    sous: String
+    sous: String,
+    price: Number
 })
 
 module.exports = mongoose.model('Sous', sousSchema);
