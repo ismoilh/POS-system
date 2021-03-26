@@ -11,5 +11,8 @@ router.route("/")
     .post(paid.payment)
     .get(paid.payid)
 
+router.route("/:id")
+    .put(paid.clicked)
+
 
 module.exports = router;

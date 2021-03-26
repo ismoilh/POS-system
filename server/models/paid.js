@@ -12,7 +12,11 @@ const PaidSchema = new Schema({
     bonusPrice: { type: Number },
     extra: { type: String },
     phone: { type: String },
-    bonus: { type: Number },
+    clicked: {
+        type: String,
+        default: "false",
+        enum: ["true", "false"]
+    },
     time: { type: String },
     created_at: {
         type: Date,

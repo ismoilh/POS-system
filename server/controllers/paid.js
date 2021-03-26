@@ -27,3 +27,15 @@ module.exports.payid = (req, res) => {
             console.log(err);
         })
 }
+
+module.exports.clicked = (req, res) => {
+    const update = { clicked: req.body.clicked }
+    Paid.findOneAndUpdate(req.params.id, update, (err, done) => {
+        if (err) {
+            res.status(400).json({ error: err.message })
+        }
+        else {
+            res.status(200).json("Updated")
+        }
+    })
+}
