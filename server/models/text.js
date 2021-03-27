@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const ZeitSchema = new Schema({
+const TextSchema = new Schema({
     a1: String,
     a2: String,
     a3: String,
@@ -23,4 +23,4 @@ const ZeitSchema = new Schema({
     a18: String
 })
 
-module.exports = mongoose.model('Zeit', ZeitSchema);
+module.exports = mongoose.model('Text', TextSchema);

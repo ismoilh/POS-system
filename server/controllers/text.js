@@ -1,7 +1,7 @@
-const Zeit = require('../models/text')
+const Text = require('../models/text')
 
 module.exports.index = async (req, res) => {
-    await Zeit.find({})
+    await Text.find({})
         .then(data => {
             res.status(200).json(data)
         })
