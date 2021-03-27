@@ -3,25 +3,24 @@ const Schema = mongoose.Schema;
 
 
 const ZeitSchema = new Schema({
-    zeit: String,
-    jetzt: String,
-    soeinfach: String,
-    gibStandort: String,
-    restaurantund: String,
-    bezaheln: String,
-    gib: String,
-    wastrift: String,
-    bezahlebarorder: String,
-    diecheffood24: String,
-    deinezeit: String,
-    deineextras: String,
-    deinegarantie: String,
-    deinevorteile: String,
-    unser: String,
-    exzellenter: String,
-    lieferservices: String,
-    lust: String
+    a1: String,
+    a2: String,
+    a3: String,
+    a4: String,
+    a5: String,
+    a6: String,
+    a7: String,
+    a8: String,
+    a9: String,
+    a10: String,
+    a11: String,
+    a12: String,
+    a13: String,
+    a14: String,
+    a15: String,
+    a16: String,
+    a17: String,
+    a18: String
 })
 
 module.exports = mongoose.model('Zeit', ZeitSchema);
-
