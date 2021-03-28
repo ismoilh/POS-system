@@ -13,9 +13,9 @@ const PaidSchema = new Schema({
     extra: { type: String },
     phone: { type: String },
     clicked: {
-        type: String,
-        default: "false",
-        enum: ["true", "false"]
+        type: Boolean,
+        default: false,
+        enum: [true, false]
     },
     time: { type: String },
     created_at: {

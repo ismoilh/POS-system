@@ -30,7 +30,7 @@ module.exports.payid = (req, res) => {
 
 module.exports.clicked = (req, res) => {
     const update = { clicked: req.body.clicked }
-    Paid.findOneAndUpdate(req.params.id, update, (err, done) => {
+    Paid.findByIdAndUpdate(req.params.id, update, (err, done) => {
         if (err) {
             res.status(400).json({ error: err.message })
         }
