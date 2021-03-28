@@ -15,6 +15,7 @@ const Siparisler = require('./models/dailyOrders');
 const Category = require('./models/category')
 const Menu = require('./models/menu');
 const Sous = require('./models/sous');
+const Seo = require('./models/seo')
 const Text = require('./models/text');
 const ClosingTime = require('./models/time');
 const Distance = require('./models/distance');
@@ -76,7 +77,7 @@ const app = express();
 
 app.use(morgan("tiny"));
 const adminBro = new AdminBro({
-    resources: [User, PhoneNumber, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime, Siparisler, PizzaParts, Paket, Text],
+    resources: [User, PhoneNumber, Menu, Location, Blog, Paid, Category, Sous, Distance, Bonus, Mail, ClosingTime, Siparisler, PizzaParts, Paket, Text, Seo],
     rootPath: '/admin',
     branding: {
         logo: false,

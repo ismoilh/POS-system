@@ -9,6 +9,7 @@ router.use(cors());
 
 router.route('/')
     .get(text.index)
+    .get(text.seo)
 
 
 module.exports = router;
