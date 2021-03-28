@@ -1,14 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const text = require('../controllers/text');
+const seo = require('../controllers/text');
 const cors = require('cors');
 
-router.use(cors());
-
-
+router.use(cors())
 
 router.route('/')
-    .get(text.index)
-
+    .get(seo.sao)
 
 module.exports = router;

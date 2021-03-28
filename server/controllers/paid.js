@@ -3,6 +3,7 @@ const Paid = require("../models/paid");
 
 module.exports.payment = async (req, res) => {
     const paid = new Paid({
+        adsoyad: req.body.adsoyad,
         title: req.body.title,
         price: req.body.price,
         owner: req.body.owner,

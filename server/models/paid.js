@@ -4,6 +4,7 @@ const { ObjectId } = mongoose.Schema;
 
 
 const PaidSchema = new Schema({
+    adsoyad: { type: String },
     title: [{ type: Array }],
     price: { type: Number },
     owner: { type: String },

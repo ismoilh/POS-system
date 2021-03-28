@@ -39,6 +39,7 @@ const textRoutes = require('./routes/text')
 const menuRoutes = require('./routes/menu');
 const paketRoutes = require('./routes/paket');
 const phoneRoutes = require('./routes/phone')
+const seoRoutes = require('./routes/seo');
 const deliveryRoutes = require('./routes/email');
 const orderRoutes = require('./routes/order');
 const distRoutes = require('./routes/distance');
@@ -178,6 +179,7 @@ app.use('/bonus', BonusRoutes);
 app.use('/text', textRoutes);
 app.use('/location', locationRoutes);
 app.use('/charge', paymentRoute);
+app.use('/seo', seoRoutes);
 app.use('/paid', paidRoute);
 app.use('/parts', PartRoutes);
 app.use('/category', categoryRoute);

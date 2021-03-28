@@ -4,7 +4,12 @@ const Schema = mongoose.Schema;
 
 const sousSchema = new Schema({
     sous: String,
-    price: Number
+    price: Number,
+    mecburi: {
+        type: Boolean,
+        default: "false",
+        enum: [true, false]
+    }
 })
 
 module.exports = mongoose.model('Sous', sousSchema);

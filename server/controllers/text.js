@@ -8,7 +8,7 @@ module.exports.index = async (req, res) => {
         })
 }
 
-module.exports.seo = async (req, res) => {
+module.exports.sao = async (req, res) => {
     await Seo.find({})
         .then(data => {
             res.status(200).json(data)
